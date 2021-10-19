@@ -8,6 +8,7 @@ using Seatbelt.Output.TextWriters;
 
 ///具体指令 去做一件事 有点类似那个Linux的一个命令 对应一个工具 ls =a
 // OO设计 从字符串解析到具象指令 做事情
+//Seatbelt 来源项目阅读 针对代码进行思考
 namespace Seatbelt.Commands.Browser
 {
     // TODO: Listing bookmarks does not account for bookmark folders. It lists folders, but not nested bookmarks/folders inside another folder )
