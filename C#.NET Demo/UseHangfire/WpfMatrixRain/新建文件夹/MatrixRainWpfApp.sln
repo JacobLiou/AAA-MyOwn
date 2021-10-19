@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixRainWpfApp", "MatrixRainWpfApp\MatrixRainWpfApp.csproj", "{D80E96B9-8C74-4BA4-8464-6641D8BEE01F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixRain", "MatrixRain\MatrixRain.csproj", "{EBD568F5-B6B8-442B-B9FE-12299A49FCDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D80E96B9-8C74-4BA4-8464-6641D8BEE01F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D80E96B9-8C74-4BA4-8464-6641D8BEE01F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D80E96B9-8C74-4BA4-8464-6641D8BEE01F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D80E96B9-8C74-4BA4-8464-6641D8BEE01F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBD568F5-B6B8-442B-B9FE-12299A49FCDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBD568F5-B6B8-442B-B9FE-12299A49FCDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBD568F5-B6B8-442B-B9FE-12299A49FCDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBD568F5-B6B8-442B-B9FE-12299A49FCDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8F2611E-A9DD-4E55-AD3B-BC50935D2F9B}
+	EndGlobalSection
+EndGlobal

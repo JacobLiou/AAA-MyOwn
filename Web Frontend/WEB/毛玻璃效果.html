@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>毛玻璃效果</title>
+        <link>
+        <style>
+           .bg {
+                background: url(image.png);
+                
+                & > div {
+                    width: 300px;
+                    height: 200px;
+                    background: rgba(255, 255, 255, .7);
+                }
+                .g-filter {
+                    filter: blur(6px);
+                }
+                .g-backdrop-filter {
+                    backdrop-filter: blur(6px);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bg">
+            <div>Normal</div>
+
+            <div class="g-filter">
+                FIlter
+            </div>
+
+            <div class="g-backdrop-filter">
+                backdrop-filter
+            </div>
+        </div>
+    </body>
+</html>

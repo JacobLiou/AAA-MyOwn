@@ -1,0 +1,28 @@
+body{
+    position: relative;
+}
+
+div{
+    background-color: transparent;
+    position: relative;
+}
+
+h1{
+    background-color: #007823;
+    color: aquamarine;
+}
+
+#c1{
+    border: 1px solid blue;
+    position: absolute;
+}
+
+#c2{
+    border: 1px solid red;
+    position: relative;
+}
+
+/* dialog{
+    可以搭建gitlema
+} */
+

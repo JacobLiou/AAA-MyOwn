@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<title>CSS 文字波动动画效果 Codepen Cnblogs</title>
+        <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+        <style>
+           p{
+                background: #fff;
+                color: #000;
+
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    border-radius: 45% 48% 43% 47%;
+                    background: rgba(3, 169, 244, .85);
+                    animation: rotate 10s infinite linear;
+                }
+                
+                &::after {
+                    border-radius: 43% 47% 44% 48%;
+                    animation: rotate 10s infinite .5s linear;
+                }
+           }
+
+
+           @keyframes rotate{
+               0%{
+                transform: translate(-50%, -50%) rotate(0);
+               }
+
+               100%{
+                transform: translate(-50%, -50%) rotate(360deg);
+               }
+           }
+        </style>
+    </head>
+
+    <body>
+        <div class="g-container">
+            <p>TEXT WAVE</p>
+        </div>
+    </body>
+</html>

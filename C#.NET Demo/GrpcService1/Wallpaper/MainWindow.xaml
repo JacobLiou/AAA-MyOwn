@@ -1,0 +1,21 @@
+﻿<Window x:Class="Wallpaper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wallpaper"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBox x:Name="ImagePath" Width="350" Margin="5" Height="25"></TextBox>
+            <Button Content="浏览图片" Click="Button_Click" RenderTransformOrigin="1.808,0.456"/>
+            <Button Content="设置" Click="Button_Click_1" RenderTransformOrigin="1.808,0.456"/>
+        </StackPanel>
+        <Image Grid.Row="1" x:Name="ImageContent"></Image>
+    </Grid>
+</Window>

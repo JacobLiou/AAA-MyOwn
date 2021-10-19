@@ -1,0 +1,1 @@
+select * from public.t_run_clientinformation order by lastactiveutc DESC

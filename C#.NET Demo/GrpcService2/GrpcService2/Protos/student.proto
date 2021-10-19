@@ -1,0 +1,57 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "GrpcService2";
+
+package student;
+
+message Student{
+	string UserName = 1;
+	int32 Age = 2;
+	string addr = 3;
+}
+
+// 公共返回类型
+message CommonResponse{
+	int32 code =1;
+	string msg=2;
+}
+// 添加学生时传递的类型
+message AddStudentRequest{
+	Student student=1;
+
+}
+// 查询学生时传递的类型
+message QueryStudentRequest
+{
+	string UserName=1;
+}
+// 查询全部学生，没有条件，但也需要一个空的message
+message QueryAllStudentRequest
+{
+}
+// 上传图片
+message UploadImgRequest{
+	bytes data = 1;
+}
+message StudentResponse {
+	Student student =1;
+}
+message TokenRequest{
+	string UserName=1;
+	string UserPwd=2;
+}
+message TokenResponse{
+	string Token =1;
+}
+
+service StudentService{
+	rpc GetToken(TokenRequest) returns(TokenResponse);
+	//Unary
+	rpc GetStudentByUserName(QueryStudentRequest) returns(StudentResponse);
+	//Server Stream
+	rpc GetAllStudent(QueryAllStudentRequest) returns(stream StudentResponse);
+	//Client Stream
+	rpc UploadImage(stream UploadImgRequest) returns(CommonResponse);
+	//Binary stream
+	rpc AddManyStudents(stream AddStudentRequest) returns(stream StudentResponse);
+}
