@@ -1,6 +1,7 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import Welcome from './components/Welcome.vue'
+import WelcomeItem from './components/WelcomeItem.vue'
 </script>
 
 <template>
