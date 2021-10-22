@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/bin/Debug/net 5/AsyncAwait.dll",
+            "program": "${workspaceFolder}/bin/Debug/net5.0/AsyncAwait.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
