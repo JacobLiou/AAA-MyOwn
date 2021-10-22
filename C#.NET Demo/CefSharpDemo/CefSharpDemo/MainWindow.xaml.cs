@@ -38,11 +38,14 @@ namespace CefSharpDemo
 
             ///浏览器的通知事件
             browser.StatusMessage += BrowserStatusMessage;
-            browser.NavStateChanged += BrowserNavStateChanged;
+            // browser.NavStateChanged += BrowserNavStateChanged;
 
         }
 
+        private void BrowserStatusMessage(StatusMessageEventArgs args)
+        {
 
+        }
         // https://www.codeproject.com/Articles/887148/Display-HTML-in-WPF-and-CefSharp-Tutorial-Part-2
     }
 }
