@@ -24,7 +24,7 @@ namespace AsyncAwait
             DoOtherSomething(2).Wait();
             
             // Console.ReadLine();
-
+            SpinLockDemo.SpinLockSample1();
         }
 
         private static async Task DoSomething(int i)
