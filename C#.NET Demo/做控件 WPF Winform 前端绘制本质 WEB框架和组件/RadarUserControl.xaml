@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="做控件_WPF_Winform_前端绘制本质_WEB框架和组件.RadarUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:做控件_WPF_Winform_前端绘制本质_WEB框架和组件"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Rectangle StrokeThickness="3" RenderTransformOrigin="0.5,0.5" Margin="172,-185,280,30" >
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="61.39"/>
+                    <TranslateTransform X="100" Y="100"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+    </Grid>
+</UserControl>

@@ -1,0 +1,9 @@
+﻿<Application x:Class="做控件_WPF_Winform_前端绘制本质_WEB框架和组件.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:做控件_WPF_Winform_前端绘制本质_WEB框架和组件"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
