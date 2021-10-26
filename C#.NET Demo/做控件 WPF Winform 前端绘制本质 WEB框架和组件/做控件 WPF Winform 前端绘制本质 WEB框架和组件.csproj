@@ -7,4 +7,11 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Blend\**" />
+    <EmbeddedResource Remove="Blend\**" />
+    <None Remove="Blend\**" />
+    <Page Remove="Blend\**" />
+  </ItemGroup>
+
 </Project>

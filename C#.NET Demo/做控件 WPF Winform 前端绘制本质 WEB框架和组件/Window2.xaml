@@ -1,0 +1,55 @@
+﻿<Window x:Class="做控件_WPF_Winform_前端绘制本质_WEB框架和组件.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:做控件_WPF_Winform_前端绘制本质_WEB框架和组件"
+        mc:Ignorable="d"
+        Title="Window2" Height="500" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Width=" 500" Height="500">
+
+            <Polygon Points="0, 200 200, 0 400, 200 200, 400" StrokeThickness="2" Stroke="LightGray"></Polygon>
+            <Polygon Points="50, 200 200, 50  350, 200 200, 350" StrokeThickness="2" Stroke="LightGray"></Polygon>
+            <Polygon Points="100, 200 200, 100 300, 200 200, 300 " StrokeThickness="2" Stroke="LightGray">
+            </Polygon>
+            <Canvas x:Name="MyCanvas">
+                <Button x:Name="Button1" Content="" Canvas.Left="195" Canvas.Top="293" Height="10" Width="10" Foreground="AliceBlue" RenderTransformOrigin="-8.5,-8.624" Background="#FF9E3131" 
+                        MouseDown="Button1_MouseDown" MouseMove="Button1_MouseMove" MouseUp="Button1_MouseUp">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="Button2" Content="" Canvas.Left="195" Canvas.Top="97" Height="10" Width="10" Foreground="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" RenderTransformOrigin="-8.5,-8.624" Background="#FF973131" >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="Button3" Content="" Canvas.Left="96" Canvas.Top="197" Height="10" Width="10" Foreground="AliceBlue" RenderTransformOrigin="-8.5,-8.624" Background="#FF781919" >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="Button4" Content="" Canvas.Left="295" Canvas.Top="197" Height="10" Width="10" Foreground="AliceBlue" RenderTransformOrigin="-8.5,-8.624" Background="#FF952D2D" >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Canvas>
+        </Grid>
+
+    </Grid>
+</Window>
