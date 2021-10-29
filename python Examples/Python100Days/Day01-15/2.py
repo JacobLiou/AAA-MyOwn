@@ -98,3 +98,75 @@ for i in range(1, 10):
         print("%d * %d = %d" % (i, j, i * j), end='\t')
     #换行
     print()
+
+# #判断一个正整数是不是素数
+# # 分析时间复杂度
+# def isPrime(num):
+#     if num == 1:
+#         print("1 既不是素数也不是合数")
+#     else:
+#         for i in range(2, num):
+#             if num % i == 0:
+#                 print("是合数")
+#                 return
+#         print("是素数")
+
+# isPrime(1)
+# isPrime(2)
+# isPrime(4)
+# isPrime(10000)
+# isPrime(7)
+# isPrime(9)
+# isPrime(11)
+
+
+import math
+
+#这个算法的时间复杂度优越  O(n) -> O(sqrt(n))
+def isPrime_better(num):
+    if num < 2:
+        raise ValueError(num)
+
+    end = int(math.sqrt(num)) + 1
+    isPrime = True
+    for i in range(2, end):
+        if num % i == 0:
+            isPrime = False
+            break
+    
+    return isPrime
+
+def TransPrime(num):
+    if isPrime_better(num):
+        print("是素数")
+    else:
+        print("是合数")
+
+# TransPrime(1)
+TransPrime(2)
+TransPrime(4)
+TransPrime(10000)
+TransPrime(7)
+TransPrime(9)
+TransPrime(11)
+
+# (a, b) * [a, b] = a * b 最大公约数乘以最小公倍数等于两数乘
+def greatestCon(a, b):
+    end = min(a, b) 
+    for i in range(end, 0, -1):
+        if a % i == 0 and b % i == 0:
+            return i   
+    return 1
+
+def smallestRan(a, b):
+    return a * b // greatestCon(a, b)
+
+
+print(greatestCon(1, 2))
+print(smallestRan(1, 2))
+
+print(greatestCon(20, 50))
+print(smallestRan(20, 50))
+
+print(greatestCon(20, 1000))
+print(smallestRan(20, 1000))
