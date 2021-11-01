@@ -10,6 +10,22 @@ class Test:
         print(self.__foo)
         print('__bar')
 
+    @property
+    def foo(self):
+        return self.__foo
+
+    @foo.setter
+    def foo(self, foo):
+        self.__foo = foo
+
+    @staticmethod
+    def check(x, y):
+        return True if x > y else False
+    
+    @classmethod
+    def classGood():
+        pass
+
 class Clock(object):
     def __init__(self, hour=0, minute=0, second=0) -> None:
         super().__init__()
@@ -40,6 +56,23 @@ class Point:
     def calcDistance(self, rhs):
         import math
         return math.sqrt( (self.x - rhs.x) ** 2 + (self.y - rhs.y) ** 2)
+
+
+
+
+from abc import ABCMeta, abstractmethod
+class Pet(object, metaclass=ABCMeta):
+    def __init__(self, name) -> None:
+        super().__init__()
+        self._name = name
+    
+    @abstractmethod
+    def make_voice(self):
+        pass
+
+class Cat(Pet):
+    def make_voice(self):
+        print( "Meow")
 
 def main():
     test = Test('hello')
