@@ -34,6 +34,7 @@ def get_element(url):
 
     }
     response = requests.get(url, headers=headers)
+    # json_data = response.json()
     return etree.HTML(response.text)
 
 # import pymysql #hun'混装环境 python 2 /3   环境搭建和以来解决
