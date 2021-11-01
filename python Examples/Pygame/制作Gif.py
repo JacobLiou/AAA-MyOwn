@@ -33,7 +33,6 @@ index = 1
 for frame in iter:
     frame.save(".img/new/frame%d.png" % index)
     index += 1
-    
 
 
 
