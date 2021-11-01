@@ -111,3 +111,21 @@ def getTop2Number(numList):
 print(getTop2Number([1, 2, 5, 2, 9 , 18 , 33, 2, 1,6]))
 
 
+fib = lambda x : 1 if x <=1 else (fib(x-1) + fib(x-2))
+print(fib(2))
+print(fib(5))
+
+from functools import reduce
+
+lst = [1, 2, 3, 4, 5]
+squareList = [i for i in map(lambda x : x ** 2, lst)] 
+print(squareList)
+
+list = [1,2,3,4,5,6,7,8,9,10]
+newList = [i for i in filter(lambda x: x % 2 == 0, list)]
+print(newList)
+
+# reduce(function, iterable) applies two arguments cumulatively to the items of iterable, from left to right
+list = [1,2,3,4,5]
+s = reduce(lambda x,y: x+y,  list)
+print(s)
