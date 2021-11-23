@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{787B5529-1330-474B-8F5D-8A7CE2521DFD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ThisIsWin11</RootNamespace>
+    <AssemblyName>ThisIsWin11</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>AppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Management.Automation\v4.0_3.0.0.0__31bf3856ad364e35\System.Management.Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\Pages.cs" />
+    <Compile Include="Helpers\Keystrokes.cs" />
+    <Compile Include="Helpers\Strings.cs" />
+    <Compile Include="Helpers\Utils.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Gaming\PowerThrottling.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Gaming\GameDVR.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Gaming\VisualFX.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\AppsTheme.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\FileExplorer.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\HiddenFileExt.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\SnapAssistFlyout.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarAl.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarChat.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarSearch.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\Transparency.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\Widgets.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\WindowsTheme.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\AppsAutoInstall.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\TailoredExperiences.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\WindowsTips.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\HiddenFileFolder.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\System\EnableWSL.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\System\FaxPrinter.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\System\TeamsAutostart.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\System\XPSWriter.cs" />
+    <Compile Include="Pages\ComponentsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ComponentsWindow.Designer.cs">
+      <DependentUpon>ComponentsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HomeWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\HomeWindow.Designer.cs">
+      <DependentUpon>HomeWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\AccountInfo.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\AppNotifications.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\BackgroundApps.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Calendar.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Call.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\CallHistory.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Camera.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\CellularData.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Contacts.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\DiagnosticInformation.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Documents.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Email.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\EyeGaze.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\FileSystem.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Messaging.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Microphone.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Motion.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Notifications.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\OtherDevices.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Pictures.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Radios.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Tasks.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\TrackingApps.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Videos.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\Biometrics.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\Advertising.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\Feedback.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\LocationTracking.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\SuggestedContent.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\DiagnosticData.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\CompatibilityTelemetry.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\Telemetry.cs" />
+    <Compile Include="Modules\PumpedApp\ErrorHelper.cs" />
+    <Compile Include="Pages\SettingsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\SettingsWindow.Designer.cs">
+      <DependentUpon>SettingsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AppsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\AppsWindow.Designer.cs">
+      <DependentUpon>AppsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PackagesWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\PackagesWindow.Designer.cs">
+      <DependentUpon>PackagesWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SystemWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\SystemWindow.Designer.cs">
+      <DependentUpon>SystemWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pages\AutomateWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\AutomateWindow.Designer.cs">
+      <DependentUpon>AutomateWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Showcase\LockScreen.cs" />
+    <Compile Include="Showcase\OS.cs" />
+    <Compile Include="Modules\PumpedApp\AssessmentNode.cs" />
+    <Compile Include="Modules\PumpedApp\ITreeNode.cs" />
+    <Compile Include="Modules\PumpedApp\AssessmentBase.cs" />
+    <Compile Include="Modules\PumpedApp\RegistryHelper.cs" />
+    <Compile Include="Modules\PumpedApp\WindowsHelper.cs" />
+    <EmbeddedResource Include="Pages\ComponentsWindow.resx">
+      <DependentUpon>ComponentsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\SettingsWindow.resx">
+      <DependentUpon>SettingsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\AppsWindow.resx">
+      <DependentUpon>AppsWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PackagesWindow.resx">
+      <DependentUpon>PackagesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\SystemWindow.resx">
+      <DependentUpon>SystemWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\HomeWindow.resx">
+      <DependentUpon>HomeWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Pages\AutomateWindow.resx">
+      <DependentUpon>AutomateWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppIcon.ico" />
+    <None Include="Resources\systemapps.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
