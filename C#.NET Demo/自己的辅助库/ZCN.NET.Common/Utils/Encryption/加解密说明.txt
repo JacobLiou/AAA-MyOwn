@@ -1,0 +1,73 @@
+﻿什么是对称加密技术？
+
+对称加密采用了对称密码编码技术，它的特点是文件加密和解密使用相同的密钥加密，也就是加密密钥也可以用作解密密钥，这种方法在密码学中叫做对称加密算法。
+对称加密算法使用起来简单快捷，密钥较短，且破译困难，除了数据加密标准（DES），另一个对称密钥加密系统是国际数据加密算法（IDEA），它比DES的加密性好，而且对计算机功能要求也没有那么高
+
+对称加密算法在电子商务交易过程中存在几个问题：
+
+  1、要求提供一条安全的渠道使通讯双方在首次通讯时协商一个共同的密钥。
+    直接的面对面协商可能是不现实而且难于实施的，所以双方可能需要借助于邮件和电话等其它相对不够安全的手段来进行协商；
+
+  2、密钥的数目难于管理。因为对于每一个合作者都需要使用不同的密钥，很难适应开放社会中大量的信息交流；
+
+  3、对称加密算法一般不能提供信息完整性的鉴别。它无法验证发送者和接受者的身份；
+
+  4、对称密钥的管理和分发工作是一件具有潜在危险的和烦琐的过程。
+     对称加密是基于共同保守秘密来实现的，采用对称加密技术的贸易双方必须保证采用的是相同的密钥，
+     保证彼此密钥的交换是安全可靠的，同时还要设定防止密钥泄密和更改密钥的程序。
+
+假设两个用户需要使用对称加密方法加密然后交换数据，则用户最少需要2个密钥并交换使用，
+如果企业内用户有n个，则整个企业共需要n×(n-1) 个密钥，密钥的生成和分发将成为企业信息部门的恶梦。
+
+常见的对称加密算法有DES、3DES、Blowfish、IDEA、RC4、RC5、RC6和AES 
+
+========================================================================================================================================================
+
+什么是非对称加密技术
+
+与对称加密算法不同，非对称加密算法需要两个密钥：公开密钥（publickey）和私有密钥（privatekey）。
+公开密钥与私有密钥是一对，如果用公开密钥对数据进行加密，只有用对应的私有密钥才能解密；
+如果用私有密钥对数据进行加密，那么只有用对应的公开密钥才能解密。
+因为加密和解密使用的是两个不同的密钥，所以这种算法叫作非对称加密算法。
+
+非对称加密算法实现机密信息交换的基本过程是：甲方生成一对密钥并将其中的一把作为公用密钥向其它方公开；
+                                    得到该公用密钥的乙方使用该密钥对机密信息进行加密后再发送给甲方；
+                                    甲方再用自己保存的另一把专用密钥对加密后的信息进行解密。
+                                    甲方只能用其专用密钥解密由其公用密钥加密后的任何信息。
+
+非对称加密的典型应用是数字签名。
+
+常见的非对称加密算法有：RSA、ECC（移动设备用）、Diffie-Hellman、El Gamal、DSA（数字签名用）
+
+========================================================================================================================================================
+
+Hash算法（摘要算法）
+
+Hash算法特别的地方在于它是一种单向算法，用户可以通过hash算法对目标信息生成一段特定长度的唯一hash值，却不能通过这个hash值重新获得目标信息。
+因此Hash算法常用在不可还原的密码存储、信息完整性校验等。
+
+常见的Hash算法有MD2、MD4、MD5、HAVAL、SHA
+
+
+
+参考内容
+
+全面解决.Net与Java互通时的RSA加解密问题，使用PEM格式的密钥文件：https://www.cnblogs.com/zyl910/p/rsapemdemo_cs_java.html
+加解密在线工具：http://web.chacuo.net/netrsakeypair
+# 在线RSA公钥加密解密、RSA public key encryption and decryption  http://tool.chacuo.net/cryptrsapubkey
+# 在线RSA私钥加密解密、RSA private key encryption and decryption http://tool.chacuo.net/cryptrsaprikey
+
+
+
+参考文献
+RSA (cryptosystem)》: https://en.wikipedia.org/wiki/RSA_(cryptosystem)
+Michel I. Gallant Ph.D.《RSA Public, Private, and PKCS #8 key parser》（OpenSSLKey.cs）. http://www.jensign.com/opensslkey/
+PKCS#1：RSA加密》. http://man.chinaunix.net/develop/rfc/RFC2313.txt
+《在线生成生成RSA密钥对》. http://web.chacuo.net/netrsakeypair
+蒋国纲《那些证书相关的玩意儿(SSL,X.509,PEM,DER,CRT,CER,KEY,CSR,P12等)》. http://www.cnblogs.com/guogangj/p/4118605.html
+阮一峰《RSA算法原理（二）》. http://www.ruanyifeng.com/blog/2013/07/rsa_algorithm_part_two.html
+任家《OPENSSL中RSA私钥文件（PEM格式）解析【一】》. http://blog.sina.com.cn/s/blog_4fcd1ea30100yh4s.html
+写代码的二妹《PHP，C# 和JAVARSA签名及验签》. http://www.cnblogs.com/frankyou/p/5993756.html
+FrankYou《C# RSA 分段加解密》. http://www.cnblogs.com/frankyou/p/5993756.html
+FrankYou《Java RSA 分段加解密》. http://www.cnblogs.com/frankyou/p/5993685.html
+sahusoft《分组对称加密模式:ECB/CBC/CFB/OFB缺CTR》. http://blog.csdn.net/sahusoft/article/details/6867848

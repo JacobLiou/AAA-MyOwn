@@ -1,0 +1,9 @@
+﻿
+微软自带的日志功能
+
+System.Diagnostics.Trace和System.Diagnostics.Debug。
+MSDN：https://docs.microsoft.com/zh-cn/dotnet/api/system.diagnostics.trace?redirectedfrom=MSDN&view=netframework-4.8
+      http://msdn.microsoft.com/zh-cn/library/vstudio/system.diagnostics.debug(v=vs.100).aspx
+
+
+参考微博： https://www.cnblogs.com/blqw/p/3639360.html
