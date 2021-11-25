@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ajax 调用 BIMFACE 服务端 API 示例</title>
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <div style="margin:20px;">
+        AccessToken： <input id="txtToken" type="text" style="width:300px;" readonly="readonly" />
+    </div>
+    <div style="margin:20px; padding-left:118px;">
+        <input id="btnCallApi" type="button" value="Ajax 调用 BIMFACE 服务端 API（获取Token）" onclick="test();" />
+    </div>
+
+    <script type="text/javascript">
+        function test() {
+            $("#txtToken").val("");
+
+            $.ajax({
+                url: "https://api.bimface.com/oauth2/token",
+                type: "POST",
+                dataType: "json",
+                beforeSend: function (request) {
+                    request.setRequestHeader("Authorization", "Basic SHR6b3ZKZ2lBbFY2Rm85VzNudnd5bXNvY1k1dzlzSlI6OTFtM1Jjc3RCWFBlZGRsT2pSYzltcmliWkpQbllXdWM=");
+                },
+                success: function (result) {
+                    $("#txtToken").val(result.data.token);
+                },
+                error: function (msg) {
+                    alert('请求发生异常。' + JSON.stringify(msg));
+                }
+            })
+        }
+    </script>
+
+</body>
+</html>

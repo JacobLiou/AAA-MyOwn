@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{28B58E8F-6039-4F05-A26F-32D73088075C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BIMFace.SDK.CSharp.Common</RootNamespace>
+    <AssemblyName>BIMFace.SDK.CSharp.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\MemoryCacheUtils.cs" />
+    <Compile Include="Enums\CaseType.cs" />
+    <Compile Include="Exceptions\BaseException.cs" />
+    <Compile Include="Exceptions\Configuration2Exception.cs" />
+    <Compile Include="Extensions\Serialization\Object.Serialize.cs" />
+    <Compile Include="Extensions\Serialization\String.Deserialize.cs" />
+    <Compile Include="Extensions\System.Boolean\Boolean.Extension.cs" />
+    <Compile Include="Extensions\System.Collection\System.Collections.Generic.ICollection[T]\ValueComparison\ICollection[T].IsEmpty.cs" />
+    <Compile Include="Extensions\System.Collection\System.Collections.Generic.IDictionary\IDictionary[string, string].ToNameValueCollection.cs" />
+    <Compile Include="Extensions\System.Collection\System.Collections.Generic.IEnumerable\IEnumerable[IEnumerable[T]]\IEnumerable[IEnumerable[T]].MergeDistinctInnerEnumerable.cs" />
+    <Compile Include="Extensions\System.Collection\System.Collections.Generic.IEnumerable\IEnumerable[IEnumerable[T]]\IEnumerable[IEnumerable[T]].MergeInnerEnumerable.cs" />
+    <Compile Include="Extensions\System.Collection\System.Collections.Generic.IEnumerable\IEnumerable[T]\Utils\IEnumerable[T].ForEach.cs" />
+    <Compile Include="Extensions\System.Collection\System.Collections.Generic.IEnumerable\IEnumerable[T]\Utils\IEnumerable[T].StringJoin.cs" />
+    <Compile Include="Extensions\System.Collection\System.Collections.Generic.IEnumerable\IEnumerable[T]\ValueComparison\IEnumerable[T].IsEmpty.cs" />
+    <Compile Include="Extensions\System.Collection\System.Collections.Generic.IEnumerable\IEnumerable[T]\ValueComparison\IEnumerable[T].IsNullOrEmpty.cs" />
+    <Compile Include="Extensions\System.Enum\EnumExtension.cs" />
+    <Compile Include="Extensions\System.Exception\ExceptionExtensions.cs" />
+    <Compile Include="Extensions\System.IO\System.IO.Stream\Stream.ToByteArray.cs" />
+    <Compile Include="Extensions\System.Object\Convert\ToValueType\Object.ToBoolean.cs" />
+    <Compile Include="Extensions\System.Object\Convert\ToValueType\Object.ToByte.cs" />
+    <Compile Include="Extensions\System.Object\Convert\ToValueType\Object.ToChar.cs" />
+    <Compile Include="Extensions\System.Object\Convert\ToValueType\Object.ToDateTime.cs" />
+    <Compile Include="Extensions\System.Object\Convert\ToValueType\Object.ToDecimal.cs" />
+    <Compile Include="Extensions\System.Object\Convert\ToValueType\Object.ToDouble.cs" />
+    <Compile Include="Extensions\System.Object\Convert\ToValueType\Object.ToFloat.cs" />
+    <Compile Include="Extensions\System.Object\Convert\ToValueType\Object.ToGuid.cs" />
+    <Compile Include="Extensions\System.Object\Convert\ToValueType\Object.ToInt16.cs" />
+    <Compile Include="Extensions\System.Object\Convert\ToValueType\Object.ToInt32.cs" />
+    <Compile Include="Extensions\System.Object\Convert\ToValueType\Object.ToInt64.cs" />
+    <Compile Include="Extensions\System.Object\Convert\ToValueType\Object.ToLong.cs" />
+    <Compile Include="Extensions\System.Object\Convert\ToValueType\Object.ToShort.cs" />
+    <Compile Include="Extensions\System.Object\Convert\ToValueType\Object.ToSingle.cs" />
+    <Compile Include="Extensions\System.Object\Convert\ToValueType\Object.ToStringSafe.cs" />
+    <Compile Include="Extensions\System.Object\ValueComparison\Object.IsNull.cs" />
+    <Compile Include="Extensions\System.String\ValueComparison\String.IsNullOrEmpty.cs" />
+    <Compile Include="Extensions\System.Uri\UriExtension.cs" />
+    <Compile Include="Extensions\System.Web\System.Web.HttpUtility\System.String\String.UrlDecode.cs" />
+    <Compile Include="Extensions\System.Web\System.Web.HttpUtility\System.String\String.UrlDecodeToBytes.cs" />
+    <Compile Include="Extensions\System.Web\System.Web.HttpUtility\System.String\String.UrlEncode.cs" />
+    <Compile Include="Extensions\System.Web\System.Web.HttpUtility\System.String\String.UrlEncodeToBytes.cs" />
+    <Compile Include="Extensions\System.Web\System.Web.HttpUtility\System.String\String.UrlPathEncode.cs" />
+    <Compile Include="Http\HttpClientUtils.cs" />
+    <Compile Include="Http\HttpContentType.cs" />
+    <Compile Include="Http\HttpManager.cs" />
+    <Compile Include="Http\HttpMethod.cs" />
+    <Compile Include="Http\HttpResult.cs" />
+    <Compile Include="Http\HttpStatusCode2.cs" />
+    <Compile Include="Http\ResponseReadMode.cs" />
+    <Compile Include="Logs\LogLevel.cs" />
+    <Compile Include="Logs\LogUtility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BIMFace_SDK_CSharp.cs" />
+    <Compile Include="Utils\Config\ConfigUtility.cs" />
+    <Compile Include="Utils\Encryption\AES.cs" />
+    <Compile Include="Utils\Encryption\Base64.cs" />
+    <Compile Include="Utils\Encryption\CryptoUtility.cs" />
+    <Compile Include="Utils\Encryption\DES.cs" />
+    <Compile Include="Utils\Encryption\Hash.cs" />
+    <Compile Include="Utils\Encryption\HashNames.cs" />
+    <Compile Include="Utils\Encryption\RSA.cs" />
+    <Compile Include="Utils\System.String\StringUtils.cs" />
+    <Compile Include="Utils\System.Text\EncodingNames.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

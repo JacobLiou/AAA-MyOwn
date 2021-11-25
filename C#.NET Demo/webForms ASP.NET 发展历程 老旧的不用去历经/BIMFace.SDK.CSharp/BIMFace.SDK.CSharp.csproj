@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{466035A8-8DDA-4848-8BB0-062D0E2D9614}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BIMFace.SDK.CSharp</RootNamespace>
+    <AssemblyName>BIMFace.SDK.CSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\CallbackUtils.cs" />
+    <Compile Include="API\Imp\BakeApi.cs" />
+    <Compile Include="API\Imp\BasicApi.cs" />
+    <Compile Include="API\Imp\DatabagApi.cs" />
+    <Compile Include="API\Imp\FileApi.cs" />
+    <Compile Include="API\Imp\FileConvertApi.cs" />
+    <Compile Include="API\Imp\GltfDatabagApi.cs" />
+    <Compile Include="API\Imp\ModelCompareApi.cs" />
+    <Compile Include="API\Imp\ModelElementPropertyOverWriteApi.cs" />
+    <Compile Include="API\Imp\ModelElementSpaceRelationCalculationApi.cs" />
+    <Compile Include="API\Imp\ModelInfoAndElementPropertyQueryApi.cs" />
+    <Compile Include="API\Imp\ModelIntegrateApi.cs" />
+    <Compile Include="API\Imp\OfflineDatabagApi.cs" />
+    <Compile Include="API\Imp\RfaFileApi.cs" />
+    <Compile Include="API\Imp\ShareLinkApi.cs" />
+    <Compile Include="API\Interface\IBakeApi.cs" />
+    <Compile Include="API\Interface\IBasicApi.cs" />
+    <Compile Include="API\Interface\IDatabagApi.cs" />
+    <Compile Include="API\Interface\IFileApi.cs" />
+    <Compile Include="API\Interface\IFileConvertApi.cs" />
+    <Compile Include="API\Interface\IGltfDatabagApi.cs" />
+    <Compile Include="API\Interface\IModelCompareApi.cs" />
+    <Compile Include="API\Interface\IModelElementPropertyOverWriteApi.cs" />
+    <Compile Include="API\Interface\IModelElementSpaceRelationCalculationApi.cs" />
+    <Compile Include="API\Interface\IModelInfoAndElementPropertyQueryApi.cs" />
+    <Compile Include="API\Interface\IModelIntegrateApi.cs" />
+    <Compile Include="API\Interface\IOfflineDatabagApi.cs" />
+    <Compile Include="API\Interface\IRfaFileApi.cs" />
+    <Compile Include="API\Interface\IShareLinkApi.cs" />
+    <Compile Include="Constants\BIMFaceConstants.cs" />
+    <Compile Include="Constants\CallbackStatus.cs" />
+    <Compile Include="Constants\ModelCompareDiffType.cs" />
+    <Compile Include="Constants\ModelType.cs" />
+    <Compile Include="Constants\RoomTolerance.cs" />
+    <Compile Include="Constants\TransferStatus.cs" />
+    <Compile Include="Constants\ViewType.cs" />
+    <Compile Include="Entity\Request\DatabagDerivativeRequest.cs" />
+    <Compile Include="Entity\Request\Integrate\ElementPropertyOverride.cs" />
+    <Compile Include="Entity\Request\Integrate\FileIdHashWithElementIds.cs" />
+    <Compile Include="Entity\Request\Integrate\FileIntegrateRequest.cs" />
+    <Compile Include="Entity\Request\Integrate\FloorMappingItem.cs" />
+    <Compile Include="Entity\Request\Integrate\IntegrateQueryRequest.cs" />
+    <Compile Include="Entity\Request\Integrate\IntegrateSource.cs" />
+    <Compile Include="Entity\Request\Integrate\IntegrationTreeOptionalRequestBody.cs" />
+    <Compile Include="Entity\Request\Integrate\TreeNodeSort.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\SplitDrawingResultResponse.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\SplitDrawingResponse.cs" />
+    <Compile Include="Entity\Response\04 ModelCompare\DrawingCompareDiffResponse.cs" />
+    <Compile Include="Entity\Response\05 ModelIntegrate\ElementsBoundingBoxesCalcResponse.cs" />
+    <Compile Include="Entity\Response\05 ModelIntegrate\FileIntegrateBean.cs" />
+    <Compile Include="Entity\Response\05 ModelIntegrate\FileIntegrateDetailBean.cs" />
+    <Compile Include="Entity\Response\05 ModelIntegrate\FileViews.cs" />
+    <Compile Include="Entity\Response\05 ModelIntegrate\IntegrateFileData.cs" />
+    <Compile Include="Entity\Response\05 ModelIntegrate\ModelIntegrateDeleteResponse.cs" />
+    <Compile Include="Entity\Response\05 ModelIntegrate\ModelIntegrateQueryResponse.cs" />
+    <Compile Include="Entity\Response\05 ModelIntegrate\ModelIntegrateResponse.cs" />
+    <Compile Include="Entity\Response\05 ModelIntegrate\SingleIntegrateModelElements.cs" />
+    <Compile Include="Entity\Response\05 ModelIntegrate\SingleIntegrateModelViews.cs" />
+    <Compile Include="Entity\Response\05 ModelIntegrate\SingleIntegrateModeSubFiles.cs" />
+    <Compile Include="Entity\Response\Bake\DatabagDerivativeCreateResponse.cs" />
+    <Compile Include="Entity\Response\Bake\DatabagDerivativeQueryResponse.cs" />
+    <Compile Include="Entity\Response\DatabagDerivativeBean.cs" />
+    <Compile Include="Entity\Response\Databag\DatabagInfo.cs" />
+    <Compile Include="Entity\Response\Databag\DatabagLengthQueryResponse.cs" />
+    <Compile Include="Entity\Response\Databag\DatabagThumbnailQueryResponse.cs" />
+    <Compile Include="Entity\Response\FileEntity.cs" />
+    <Compile Include="Entity\Response\GeneralResponse.cs" />
+    <Compile Include="Entity\Response\05 ModelIntegrate\ElementsWithBoundingBox.cs" />
+    <Compile Include="Entity\Response\ModelElementPropertyOverWrite\IntegrateModelElementPropertyDeleteResponse.cs" />
+    <Compile Include="Entity\Response\ModelElementPropertyOverWrite\IntegrateModelElementPropertyModifyResponse.cs" />
+    <Compile Include="Entity\Response\ModelElementPropertyOverWrite\SingleModelElementPropertyDeleteResponse.cs" />
+    <Compile Include="Entity\Response\ModelElementPropertyOverWrite\SingleModelElementPropertyModifyResponse.cs" />
+    <Compile Include="Entity\Response\ModelElementSpaceRelationCalculation\QueryFloorRoomsResponse.cs" />
+    <Compile Include="Entity\Response\ModelInfoAndElementPropertyQuery\PropertyValuesResponse.cs" />
+    <Compile Include="Entity\Response\ModelInfoAndElementPropertyQuery\QueryElementIdsResponse.cs" />
+    <Compile Include="Entity\Response\ModelInfoAndElementPropertyQuery\QueryPaginationContextIdResponse.cs" />
+    <Compile Include="Entity\Response\ModelInfoAndElementPropertyQuery\QueryPropertyValuesResponse.cs" />
+    <Compile Include="Entity\Response\ModelInfoAndElementPropertyQuery\SearchElementIdsResponse.cs" />
+    <Compile Include="Entity\Response\OfflineDatabag\GetUrlSwaggerDisplay.cs" />
+    <Compile Include="Entity\Response\Page.cs" />
+    <Compile Include="Entity\Response\Page2.cs" />
+    <Compile Include="Entity\Request\FileElementsGetRequest.cs" />
+    <Compile Include="Entity\Request\FileTranslateRequest.cs" />
+    <Compile Include="Entity\Request\FileTreeRequestBody.cs" />
+    <Compile Include="Entity\Request\ModelCompareQueryRequest.cs" />
+    <Compile Include="Entity\Request\ModelCompareRequest.cs" />
+    <Compile Include="Entity\Request\SingleModelMultipleElementsPropertiesGetRequest.cs" />
+    <Compile Include="Entity\Request\TranslateQueryRequest.cs" />
+    <Compile Include="Entity\Response\02 File\FileDeleteResponse.cs" />
+    <Compile Include="Entity\Response\02 File\FileDownloadUrlGetResponse.cs" />
+    <Compile Include="Entity\Response\02 File\FileInfoGetResponse.cs" />
+    <Compile Include="Entity\Response\02 File\FileInfoListGetResponse.cs" />
+    <Compile Include="Entity\Response\02 File\FileSupportResponse.cs" />
+    <Compile Include="Entity\Response\02 File\FileUploadPolicyResponse.cs" />
+    <Compile Include="Entity\Response\02 File\FileUploadResponse.cs" />
+    <Compile Include="Entity\Response\02 File\FileUploadStatusResponse.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\Area.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\DrawingSheet.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\FileTranslateDetailsResponse.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\FileTranslateResponse.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\Floor.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\MultipleModelsFloors.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\Room.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\SingleModelDrawingSheets.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\SingleModelElementsSwaggerDisplay.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\SingleModelFloors.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\SingleModelLink.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\SingleModelMultipleElementsCommonProperties.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\SingleModelMultipleElementsProperties.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\SingleModelSingleArea.cs" />
+    <Compile Include="Entity\Response\Property.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\SingleModelSingleElementMaterials.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\SingleModelSingleElementProperty.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\SingleModelSingleFloorAreas.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\SingleModelSingleRoom.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\SingleModelTree.cs" />
+    <Compile Include="Entity\Response\03 FileConvert\SingleModelViews.cs" />
+    <Compile Include="Entity\Response\RfaFile\RfaFamilyType.cs" />
+    <Compile Include="Entity\Response\RfaFile\RfaFamilyTypeProperty.cs" />
+    <Compile Include="Entity\Response\RfaFile\RfaFileFamilyTypeListResponse.cs" />
+    <Compile Include="Entity\Response\RfaFile\RfaFileFamilyTypePropertyKeyListResponse.cs" />
+    <Compile Include="Entity\Response\RfaFile\RfaFileFamilyTypePropertyListResponse.cs" />
+    <Compile Include="Entity\Response\Share\BatchDeleteShareLinkResponse.cs" />
+    <Compile Include="Entity\Response\Share\DeleteShareLinkResponse.cs" />
+    <Compile Include="Entity\Response\Share\GetShareLinkListResponse.cs" />
+    <Compile Include="Entity\Response\Share\ShareLinkBean.cs" />
+    <Compile Include="Entity\Response\Share\ShareLinkResponse.cs" />
+    <Compile Include="Entity\Response\ViewInfo.cs" />
+    <Compile Include="Entity\Response\04 ModelCompare\DeleteModelCompareResponse.cs" />
+    <Compile Include="Entity\Response\04 ModelCompare\ModelCompareChangeResponse.cs" />
+    <Compile Include="Entity\Response\04 ModelCompare\ModelCompareDiffResponse.cs" />
+    <Compile Include="Entity\Response\04 ModelCompare\ModelCompareQueryResponse.cs" />
+    <Compile Include="Entity\Response\04 ModelCompare\ModelCompareResponse.cs" />
+    <Compile Include="Entity\Response\04 ModelCompare\ModelCompareTreeResponse.cs" />
+    <Compile Include="Entity\Response\CallbackResponse.cs" />
+    <Compile Include="Entity\Response\01 Token\AccessTokenResponse.cs" />
+    <Compile Include="Entity\Response\01 Token\ViewTokenResponse.cs" />
+    <Compile Include="Entity\Response\PropertyGroup.cs" />
+    <Compile Include="Entity\Response\PropertyItem.cs" />
+    <Compile Include="Exceptions\BIMFaceException.cs" />
+    <Compile Include="Http\BIMFaceHttpHeaders.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BIMFace.SDK.CSharp.Common\BIMFace.SDK.CSharp.Common.csproj">
+      <Project>{28b58e8f-6039-4f05-a26f-32d73088075c}</Project>
+      <Name>BIMFace.SDK.CSharp.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="使用说明.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
