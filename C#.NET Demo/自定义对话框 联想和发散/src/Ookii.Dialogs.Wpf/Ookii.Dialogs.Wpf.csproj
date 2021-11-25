@@ -1,0 +1,153 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFrameworks>net5.0-windows;netcoreapp3.1;net45</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>Ookii.Dialogs.Wpf</RootNamespace>
+
+    <AssemblyName>Ookii.Dialogs.Wpf</AssemblyName>
+    <AssemblyVersion>3.0.0.0</AssemblyVersion>
+    <GenerateAssemblyVersionAttribute>true</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>true</GenerateAssemblyFileVersionAttribute>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <DebugType>portable</DebugType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>../../assets/ookii-dialogs.snk</AssemblyOriginatorKeyFile>
+    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+
+    <NoWarn>$(NoWarn);NU5048</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatSpecificWarningsAsErrors />
+
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TieredCompilation>true</TieredCompilation>
+    <TieredCompilationQuickJit>true</TieredCompilationQuickJit>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <MinClientVersion>3.3</MinClientVersion>
+    <PackageId>Ookii.Dialogs.Wpf</PackageId>
+    <Version>0.0.1-local</Version>
+    <Authors>Ookii Dialogs Contributors</Authors>
+    <Company>augustoproiete.net</Company>
+    <Description>Ookii.Dialogs.Wpf is a class library for WPF applications providing several common dialogs. Included are classes for task dialogs, credential dialogs, progress dialogs, and common file dialogs.</Description>
+    <Copyright>Copyright (c) 2009-2021 Ookii Dialogs Contributors</Copyright>
+    <PackageTags>ookii;dialogs;wpf;windows-presentation-foundation;progress-dialog;task-dialog;credential-dialog;common-file-dialog</PackageTags>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+    <PackageIcon>images\icon.png</PackageIcon>
+    <PackageIconUrl>https://raw.githubusercontent.com/augustoproiete/ookii-dialogs-wpf/master/assets/ookii-dialogs-wpf-nuget.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/augustoproiete/ookii-dialogs-wpf</PackageProjectUrl>
+    <PackageReleaseNotes>https://github.com/augustoproiete/ookii-dialogs-wpf/releases</PackageReleaseNotes>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/augustoproiete/ookii-dialogs-wpf.git</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <DefineConstants>$(DefineConstants);NETFX</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
+    <DefineConstants>$(DefineConstants);NETCORE31</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net5.0-windows' ">
+    <DefineConstants>$(DefineConstants);NET5</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DisableImplicitFrameworkReferences Condition=" '$(TargetFramework)' == 'net45' ">true</DisableImplicitFrameworkReferences>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="*.DotSettings" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Properties\XPThemes.manifest" />
+    <EmbeddedResource Include="Properties\XPThemes.manifest">
+      <LogicalName>Ookii.Dialogs.XPThemes.manifest</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="CredentialDialog.bmp" />
+    <None Remove="ProgressDialog.bmp" />
+    <None Remove="TaskDialog.bmp" />
+    <None Remove="VistaFolderBrowserDialog.bmp" />
+    <None Remove="VistaOpenFileDialog.bmp" />
+    <None Remove="VistaSaveFileDialog.bmp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="CredentialDialog.bmp" />
+    <EmbeddedResource Include="ProgressDialog.bmp" />
+    <EmbeddedResource Include="TaskDialog.bmp" />
+    <EmbeddedResource Include="VistaFolderBrowserDialog.bmp" />
+    <EmbeddedResource Include="VistaOpenFileDialog.bmp" />
+    <EmbeddedResource Include="VistaSaveFileDialog.bmp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="CredentialDialog.cs" />
+    <Compile Update="CredentialDialog.designer.cs">
+      <DependentUpon>CredentialDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Update="ProgressDialog.cs" />
+    <Compile Update="ProgressDialog.designer.cs">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="TaskDialog.cs" />
+    <Compile Update="TaskDialog.designer.cs">
+      <DependentUpon>TaskDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Update="TaskDialogButton.cs" />
+    <Compile Update="TaskDialogItem.cs" />
+    <Compile Update="TaskDialogItem.designer.cs">
+      <DependentUpon>TaskDialogItem.cs</DependentUpon>
+    </Compile>
+    <Compile Update="TaskDialogRadioButton.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="ProgressDialog.resx">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\assets\ookii-dialogs-wpf-nuget.png" Pack="true" Visible="false" PackagePath="images\icon.png" />
+  </ItemGroup>
+
+</Project>
