@@ -16,6 +16,32 @@ Martin Fowler
 
 
 
+艺术感
+
+优雅
+
+洁癖
+
+
+
+## 工程角度讨论质量
+
+技术规范
+
+checklist
+
+代码规范
+
+代码评审
+
+单元测试
+
+测试质量
+
+软件质量
+
+产品质量
+
 
 
 Clean Code Cheatsheet (v2.4)
