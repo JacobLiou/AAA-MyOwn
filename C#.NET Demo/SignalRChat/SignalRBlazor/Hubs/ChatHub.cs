@@ -7,7 +7,8 @@ namespace SignalRBlazor.Hubs
     {
         public async Task SendMessage(string user, string message)
         {
-            await Clients.All.SendAsync("ReceiveMessage", user, message);
+            //发出端不再接收自己发出的信息
+            await Clients.Others.SendAsync("ReceiveMessage", user, message);
         }
     }
 }
