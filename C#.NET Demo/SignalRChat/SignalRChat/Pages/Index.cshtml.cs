@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.SignalR;
+using SignalRChat.Hubs;
 
 namespace SignalRChat.Pages
 {
@@ -7,8 +9,12 @@ namespace SignalRChat.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        private readonly IHubContext<Chathub> _hubContext;
+
+
+        public IndexModel(IHubContext<Chathub> hubContext, ILogger<IndexModel> logger)
         {
+            _hubContext = hubContext;
             _logger = logger;
         }
 
