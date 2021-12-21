@@ -1,0 +1,47 @@
+@page "/todo"
+
+<h3>Todo</h3>
+
+<ul>
+    @foreach (var item in todos)
+    {
+        <li>@item.Title</li>
+    }
+</ul>
+
+<input placeholder="Something todo" @bind-value="title">
+<button @onclick="AddTodo">Add Todo</button>
+
+@code{
+
+    private string? title;
+
+    private List<TodoItem> todos = new();
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        Random random = new Random();
+        for(var i = 0; i < 10; ++i)
+        {
+            var todoItem = new TodoItem();
+            todoItem.Title = random.NextInt64().ToString();
+            todos.Add(todoItem);
+        }
+    }
+
+    private void AddTodo()
+    {
+        // Add the todo
+         var todoItem = new TodoItem();
+         todoItem.Title = title;
+         todos.Add(todoItem);
+    }
+
+    public class TodoItem
+    {
+        public string? Title { get; set; }
+
+        public bool IsDone { get; set; }
+    }
+}
