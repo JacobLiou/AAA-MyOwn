@@ -36,6 +36,11 @@
          var todoItem = new TodoItem();
          todoItem.Title = title;
          todos.Add(todoItem);
+
+         if(string.IsNullOrEmpty(todoItem.Title))
+         {
+             todoItem.Title = "NewTitle";
+         }
     }
 
     public class TodoItem
